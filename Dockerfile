@@ -7,6 +7,8 @@ ENV JENKINS_SLAVE_AGENT_PORT 50000
 
 ENV JAVA_OPTS  -Duser.timezone=Asia/Shanghai 
 
+RUN echo "Asia/Shanghai" > /etc/timezone; dpkg-reconfigure -f noninteractive tzdata
+
 
 # Jenkins is run with user `jenkins`, uid = 1000
 # If you bind mount a volume from the host or a data container, 
